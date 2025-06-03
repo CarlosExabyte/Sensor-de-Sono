@@ -1,0 +1,21 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "Detector_de_Sonolencia"
+authors = [{name = "ADS_Team", email = "carlos4hd@gmail.com"}]
+readme = "README.md"
+dynamic = ["version", "description"]
+
+dependencies = [
+    "numpy==1.15.2",
+    "dlib==19.16.0",
+    "pygame==1.9.4",
+    "imutils==0.5.1",
+    "opencv-python==3.4.3.18",
+    "scipy==1.1.0"
+]
+
+[project.urls]
+Home = "http://github.com"
