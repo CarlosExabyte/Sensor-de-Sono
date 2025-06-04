@@ -1,62 +1,62 @@
-
 💤 Detecção de Sonolência ao Dirigir
-Este projeto foi desenvolvido como parte do curso de Análise e Desenvolvimento de Sistemas, com foco em aplicações práticas de visão computacional. Ele detecta sinais de sonolência analisando, por meio da webcam, por quanto tempo os olhos de uma pessoa permanecem fechados. Caso o tempo ultrapasse um limite pré-definido, um alarme sonoro é acionado para alertar o usuário.
+Este projeto foi desenvolvido como parte do curso de Análise e Desenvolvimento de Sistemas, com foco em aplicações práticas de visão computacional. Ele detecta sinais de sonolência em motoristas ao analisar, em tempo real, por quanto tempo os olhos permanecem fechados. Se esse tempo ultrapassar um limite pré-definido, um alarme sonoro é ativado para alertar o usuário e prevenir possíveis acidentes.
 
 📁 Estrutura do Projeto
-O projeto está organizado em scripts modulares:
+O projeto está dividido em três scripts principais:
 
-Detecção em Imagem Estática.py: Detecta rostos e olhos em uma imagem única.
+Detector_de_Sonolencia.py
+Script principal que realiza a detecção de sonolência em tempo real com a webcam.
 
-TesteDeWebcam.py: Detecta rostos e olhos em tempo real via webcam.
+Detecção em Imagem Estática.py
+Realiza a detecção de rostos e olhos em uma imagem estática.
 
-Detector_de_Sonolencia.py: Script principal para monitoramento de sonolência usando a webcam.
+TesteDeWebcam.py
+Testa a detecção de olhos e rostos em tempo real, sem o sistema de alerta.
 
-requirements.txt: Lista de dependências do projeto.
+Também estão incluídos:
 
-pyproject.toml: Utilizado como gerenciador moderno de dependências e configuração do ambiente.
+Arquivos de recursos como classificadores Haar, arquivos de áudio e imagens de demonstração.
 
-📸 Demonstração Visual
-Detecção em imagem estática:
+shape_predictor_68_face_landmarks.dat.bz2: necessário para a detecção precisa de pontos faciais.
 
-Imagem Teste	Resultado
-test.jpeg	✔️ Detecção facial e ocular
+📷 Demonstração
+O sistema pode ser testado tanto com imagens estáticas quanto com vídeo ao vivo da webcam. Abaixo um exemplo do funcionamento:
 
-Detecção em tempo real:
 
-📷 Webcam ao vivo com alertas sonoros em caso de sonolência detectada.
+🎓 Aplicação no TCC
+Este projeto foi utilizado como base para meu Trabalho de Conclusão de Curso (TCC), explorando técnicas de visão computacional, detecção facial e segurança veicular. Ele foi testado em diferentes ambientes e condições de iluminação, com bons resultados na detecção de sinais de fadiga ocular.
 
-🎓 Projeto de Conclusão de Curso (TCC)
-Este projeto também serviu como base para o Trabalho de Conclusão de Curso (TCC), no qual foram exploradas técnicas de detecção facial, análise temporal de expressões e uso de bibliotecas especializadas para visão computacional. Testes foram realizados em diferentes ambientes e com usuários diversos.
+📦 Gerenciamento de Dependências com Flit
+O projeto utiliza o Flit como gerenciador de pacotes e para empacotamento do projeto.
 
-🧰 Requisitos
-🔹 Instalação das dependências
-Utilize o gerenciador de pacotes padrão:
+Requisitos:
+Python 3.10+
+
+Flit: instale com pip install flit
+
+Instalando dependências:
+bash
+Copiar
+Editar
+flit install --deps production
+Ou, se preferir usar o requirements.txt diretamente:
 
 bash
 Copiar
 Editar
 pip install -r requirements.txt
-🔹 Arquivo necessário
-Baixe e extraia o preditor facial da dlib:
+Bibliotecas principais:
+opencv-python
 
-bash
-Copiar
-Editar
-bzip2 -dk shape_predictor_68_face_landmarks.dat.bz2
-Coloque o arquivo .dat extraído na pasta do projeto.
+dlib
 
-🧠 Principais bibliotecas utilizadas:
-OpenCV – Processamento de imagem em tempo real
+pygame
 
-dlib – Detecção facial e landmarks
+numpy
 
-pygame – Emissão de alertas sonoros
-
-numpy – Manipulação de arrays e cálculos matriciais
-
-🚀 Como Executar
-📷 Detecção em Imagem
-Coloque sua imagem em images/ com o nome test.jpeg (ou modifique o caminho no código).
+▶️ Como Usar
+📸 Para imagem estática:
+Coloque sua imagem como test.jpeg na pasta correta.
 
 Execute:
 
@@ -64,16 +64,22 @@ bash
 Copiar
 Editar
 python "Detecção em Imagem Estática.py"
-🔴 Detecção em Tempo Real
+📹 Para webcam (teste):
 bash
 Copiar
 Editar
 python TesteDeWebcam.py
-⏰ Detecção de Sonolência com Alerta
+💤 Para monitoramento de sonolência:
 bash
 Copiar
 Editar
 python Detector_de_Sonolencia.py
-🛡️ Contribuindo para a Segurança
-Este projeto combina tecnologia acessível e técnicas de visão computacional para contribuir com a segurança no trânsito, ajudando na prevenção de acidentes causados por fadiga e sonolência ao volante.
+Certifique-se de que o arquivo shape_predictor_68_face_landmarks.dat está extraído na pasta correta com:
+
+bash
+Copiar
+Editar
+bzip2 -dk shape_predictor_68_face_landmarks.dat.bz2
+🚗 Finalidade
+Este projeto integra técnicas de visão computacional para promover segurança no trânsito, com foco na prevenção de acidentes por fadiga. Pode ser adaptado para carros inteligentes, aplicações em frotas corporativas e outras soluções em mobilidade.
 
